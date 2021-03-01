@@ -1,20 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import RouterConfig from './routerConfig';
 
 const router = createRouter({
   history: createWebHistory(),
-  routes: [
-    {
-      path: '',
-      component: () => import('../layout/Main.vue'),
-      children: [
-        {
-          path: '/',
-          name: 'FundList',
-          component: () => import('../views/FundList.vue'),
-        },
-      ],
-    },
-  ],
+  routes: RouterConfig,
 });
 
 export default router;

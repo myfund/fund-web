@@ -4,8 +4,12 @@ import App from './App.vue';
 // App
 const app = createApp(App);
 
+// axios
+import axios from './utils/axios';
+app.config.globalProperties.$http = axios;
+
 // Global Style Reset
-import 'normalize.css';
+// import 'normalize.css';
 import './assets/style/global.less';
 
 // Router

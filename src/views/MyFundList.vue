@@ -1,5 +1,5 @@
 <template>
-  <div class="menu"></div>
+  <div class="my-fund-list"></div>
 </template>
 
 <script lang="ts">
@@ -11,6 +11,6 @@
 </script>
 
 <style lang="less" scoped>
-  .menu {
+  .my-fund-list {
   }
 </style>

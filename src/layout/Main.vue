@@ -3,6 +3,8 @@
     <section class="el-container is-vertical">
       <header class="el-header">
         <h1>{{ appName }}</h1>
+        <Menu></Menu>
+        <Profile></Profile>
       </header>
       <main class="el-main">
         <router-view></router-view>
@@ -13,12 +15,14 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, ref } from 'vue';
-  import Menu from '../components/Menu.vue';
+  import { defineComponent, Ref, ref } from 'vue';
+  import Menu from '../components/Header/Menu.vue';
+  import Profile from '../components//Header/Profile.vue';
 
   export default defineComponent({
     components: {
       Menu,
+      Profile,
     },
     setup() {
       return {
@@ -41,8 +45,16 @@
     .el-header {
       line-height: 80px;
       height: 80px;
-      font-size: 30px;
       font-weight: bolder;
+      display: flex;
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .profile {
+        margin-left: auto;
+      }
     }
 
     .el-header {

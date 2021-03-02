@@ -6,6 +6,7 @@
     background-color="#ee3b05"
     text-color="#ddd"
     active-text-color="#fff"
+    @select="navSelect"
     router
   >
     <template v-for="route in routerMap">
@@ -26,7 +27,7 @@
 
 <script lang="ts">
   import { defineComponent, ref, watch } from 'vue';
-  import { useRoute } from 'vue-router';
+  import { LocationAsPath, useRoute, useRouter } from 'vue-router';
   import RouterConfig from '../../router/routerConfig';
 
   export default defineComponent({
@@ -36,11 +37,18 @@
 
       // Whole
       const route = useRoute();
+      const router = useRouter();
       activePath.value = route.path;
+
+      const navSelect = (index: string) => {
+        router.push({ path: index });
+      };
 
       return {
         routerMap,
         activePath,
+
+        navSelect,
       };
     },
   });

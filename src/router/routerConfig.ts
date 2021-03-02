@@ -6,7 +6,7 @@ export default [
     component: () => import('../layout/Main.vue'),
     children: [
       {
-        path: '',
+        path: '/',
         name: 'FundList',
         meta: {
           title: '全部',

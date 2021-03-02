@@ -44,7 +44,6 @@
       onMounted(() => {
         getFundList({ page: 0 })?.then((res) => {
           fundList.value = res.data;
-          console.log(res.data);
         });
       });
 
